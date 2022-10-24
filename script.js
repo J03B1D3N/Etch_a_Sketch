@@ -31,7 +31,24 @@ const colorErase = document.createElement('button')
 
 const buttonsLeft = document.createElement('div')
 const buttonsRight = document.createElement('div')
-const buttonsMiddle = document.createElement9('div');
+const buttonsMiddle = document.createElement9('div')
+
+buttonsLeft.appendChild(collorBlack)
+buttonsLeft.appendChild(collorWhite)
+
+buttonsRight.appendChild(collorRainbow)
+buttonsRight.appendChild(collorErase)
+
+buttonsMiddle.appendChild(gridSizeSmall)
+buttonsMiddle.appendChild(gridSizeMedium)
+buttonsMiddle.appendChild(gridSizeLarge)
+
+gridHeader.appendChild(buttonsLeft)
+gridHeader.appendChild(buttonsMiddle)
+gridHeader.appendChild(buttonsRight)
+
+
+
 
 
 
