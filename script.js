@@ -24,28 +24,60 @@ const gridSizeSmall = document.createElement('button')
 const gridSizeMedium = document.createElement('button')
 const gridSizeLarge = document.createElement('button')
 
-const collorBlack = document.createElement('button')
-const collorRainbow = document.createElement('button')
+const colorBlack = document.createElement('button')
+const colorRainbow = document.createElement('button')
 const colorWhite = document.createElement('button')
 const colorErase = document.createElement('button')
 
+gridSizeSmall.classList.add('button', 'gridSizeSmall')
+gridSizeMedium.classList.add('button', 'gridSizeMedium')
+gridSizeLarge.classList.add('button', 'gridSizeLarge')
+
+colorBlack.classList.add('button', 'colorBlack')
+colorRainbow.classList.add('button', 'colorRainbow')
+colorWhite.classList.add('button', 'colorWhite')
+colorErase.classList.add('button', 'colorErase')
+
 const buttonsLeft = document.createElement('div')
 const buttonsRight = document.createElement('div')
-const buttonsMiddle = document.createElement9('div')
+const buttonsMiddle = document.createElement('div')
+const buttonsMiddleText = document.createElement('div')
+const buttonsMiddleSection = document.createElement('div')
 
-buttonsLeft.appendChild(collorBlack)
-buttonsLeft.appendChild(collorWhite)
+buttonsLeft.setAttribute('id', 'buttonsLeft')
+buttonsMiddle.setAttribute('id', 'buttonsMiddle')
+buttonsRight.setAttribute('id', 'buttonsRight')
+buttonsMiddleText.setAttribute('id', 'buttonsMiddleText')
+buttonsMiddleSection.setAttribute('id', 'buttonsMiddleSection')
 
-buttonsRight.appendChild(collorRainbow)
-buttonsRight.appendChild(collorErase)
+
+colorBlack.textContent =  "Black"
+colorRainbow.textContent = "Rainbow"
+colorWhite.textContent = "White"
+colorErase.textContent = "Erase"
+
+gridSizeSmall.textContent = "Small"
+gridSizeMedium.textContent = "Medium"
+gridSizeLarge.textContent = "Large"
+buttonsMiddleText.textContent = "Chose grid size"
+
+buttonsLeft.appendChild(colorBlack)
+buttonsLeft.appendChild(colorWhite)
+
+buttonsRight.appendChild(colorRainbow)
+buttonsRight.appendChild(colorErase)
 
 buttonsMiddle.appendChild(gridSizeSmall)
 buttonsMiddle.appendChild(gridSizeMedium)
 buttonsMiddle.appendChild(gridSizeLarge)
 
+buttonsMiddleSection.appendChild(buttonsMiddleText)
+buttonsMiddleSection.appendChild(buttonsMiddle)
+
 gridHeader.appendChild(buttonsLeft)
-gridHeader.appendChild(buttonsMiddle)
+gridHeader.appendChild(buttonsMiddleSection)
 gridHeader.appendChild(buttonsRight)
+
 
 
 

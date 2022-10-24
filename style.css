@@ -34,4 +34,39 @@ body {
     height: 200px;
     width: 600px;
     background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: space-between;  
+}
+
+#buttonsLeft {
+    display: flex;
+    flex-direction:column;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#buttonsMiddleSection {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 100%;
+    width:100%;
+    align-items: center;
+    text-align: center;
+}
+#buttonsMiddleText {
+    color: white;
+    font-size: 40px;
+}
+#buttonsRight {
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    height: 100%;
+    width: 100%;
+    align-items: center;
 }
