@@ -29,6 +29,10 @@ const colorRainbow = document.createElement('button')
 const colorWhite = document.createElement('button')
 const colorErase = document.createElement('button')
 
+gridSizeSmall.setAttribute('id', 'small')
+gridSizeMedium.setAttribute('id', 'medium')
+gridSizeLarge.setAttribute('id', 'large')
+
 gridSizeSmall.classList.add('button', 'gridSizeSmall')
 gridSizeMedium.classList.add('button', 'gridSizeMedium')
 gridSizeLarge.classList.add('button', 'gridSizeLarge')
@@ -56,10 +60,10 @@ colorRainbow.textContent = "Rainbow"
 colorWhite.textContent = "White"
 colorErase.textContent = "Erase"
 
-gridSizeSmall.textContent = "Small"
-gridSizeMedium.textContent = "Medium"
-gridSizeLarge.textContent = "Large"
-buttonsMiddleText.textContent = "Chose grid size"
+gridSizeSmall.textContent = "16 x 16"
+gridSizeMedium.textContent = "32 x 32"
+gridSizeLarge.textContent = "64 x 64"
+buttonsMiddleText.textContent = "Choose grid size"
 
 buttonsLeft.appendChild(colorBlack)
 buttonsLeft.appendChild(colorWhite)
@@ -78,7 +82,27 @@ gridHeader.appendChild(buttonsLeft)
 gridHeader.appendChild(buttonsMiddleSection)
 gridHeader.appendChild(buttonsRight)
 
+const small = document.querySelector('#small')
+const medium = document.querySelector('#medium')
+const large = document.querySelector('#large')
 
+const gridBlocks = function(x){
+
+    grid.style.gridTemplateColumns = `repeat(${x} , 1fr)`;
+    grid.style.gridTemplateRows = `repeat(${x} , 1fr)`;
+
+    for (i = 0; i < (x * x); i++){
+        let box = document.createElement('div');
+        box.classList.add('insideGrid');
+        grid.insertAdjacentElement('beforeend', box);
+    }
+}
+gridBlocks(99)
+/*
+small.addEventListener('click', () => {
+    gridBlocks(16);
+});
+*/
 
 
 

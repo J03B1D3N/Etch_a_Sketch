@@ -26,18 +26,24 @@ body {
     background-color: blueviolet;
 }
 #grid {
-    height: 100%;
-    width: 600px;
-    background-color: white;
+    height: 625px;
+    width: 625px;
+    border: 1px solid black;
+    display: grid;
+    padding: 0px;
+    margin: 0px;
+    
+   
 }
 #gridHeader {
     height: 200px;
-    width: 600px;
+    width: 625px;
     background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
     justify-content: space-between;  
+    border: 1px solid black;
 }
 
 #buttonsLeft {
@@ -69,4 +75,11 @@ body {
     height: 100%;
     width: 100%;
     align-items: center;
+}
+
+.insideGrid {
+    border: solid 1px black;
+    margin: 0;
+    Padding: 0;
+    
 }
