@@ -86,7 +86,13 @@ const small = document.querySelector('#small')
 const medium = document.querySelector('#medium')
 const large = document.querySelector('#large')
 
+const emptyDiv = document.createElement('div');
+
+
 const gridBlocks = function(x){
+
+    const newGrid = grid.querySelectorAll('div')
+    newGrid.forEach((div) => div.remove());
 
     grid.style.gridTemplateColumns = `repeat(${x} , 1fr)`;
     grid.style.gridTemplateRows = `repeat(${x} , 1fr)`;
@@ -97,12 +103,30 @@ const gridBlocks = function(x){
         grid.insertAdjacentElement('beforeend', box);
     }
 }
-gridBlocks(99)
-/*
+
+
+
 small.addEventListener('click', () => {
     gridBlocks(16);
 });
-*/
+
+medium.addEventListener('click', () => {
+    gridBlocks(32);
+})
+
+large.addEventListener('click', () => {
+    gridBlocks(64);
+})
+
+const box = document.getElementsByClassName('insideGrid');
+
+const black = function() {
+    box.addEventListener('mouseover', () => {
+        box.style.backgroundColor = "#000000";
+    })
+}
+
+black;
 
 
 
