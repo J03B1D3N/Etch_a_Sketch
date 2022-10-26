@@ -25,9 +25,16 @@ const gridSizeMedium = document.createElement('button')
 const gridSizeLarge = document.createElement('button')
 
 const colorBlack = document.createElement('button')
-const colorRainbow = document.createElement('button')
-const colorWhite = document.createElement('button')
-const colorErase = document.createElement('button')
+const colorRandom = document.createElement('button')
+const colorEraser = document.createElement('button')
+const colorGrey = document.createElement('button')
+
+let color = "black";
+
+colorBlack.setAttribute('onclick', 'changeColor(`black`)');
+colorRandom.setAttribute('onclick', 'changeColor(`random`)');
+colorEraser.setAttribute('onclick','changeColor(`white`)');
+colorGrey.setAttribute('onclick', 'changeColor(`grey`)');
 
 gridSizeSmall.setAttribute('id', 'small')
 gridSizeMedium.setAttribute('id', 'medium')
@@ -38,9 +45,9 @@ gridSizeMedium.classList.add('button', 'gridSizeMedium')
 gridSizeLarge.classList.add('button', 'gridSizeLarge')
 
 colorBlack.classList.add('button', 'colorBlack')
-colorRainbow.classList.add('button', 'colorRainbow')
-colorWhite.classList.add('button', 'colorWhite')
-colorErase.classList.add('button', 'colorErase')
+colorRandom.classList.add('button', 'colorRainbow')
+colorEraser.classList.add('button', 'colorEraser')
+colorGrey.classList.add('button', 'colorGrey')
 
 const buttonsLeft = document.createElement('div')
 const buttonsRight = document.createElement('div')
@@ -56,9 +63,9 @@ buttonsMiddleSection.setAttribute('id', 'buttonsMiddleSection')
 
 
 colorBlack.textContent =  "Black"
-colorRainbow.textContent = "Rainbow"
-colorWhite.textContent = "White"
-colorErase.textContent = "Erase"
+colorRandom.textContent = "Random"
+colorEraser.textContent = "Eraser"
+colorGrey.textContent = "Grey"
 
 gridSizeSmall.textContent = "16 x 16"
 gridSizeMedium.textContent = "32 x 32"
@@ -66,10 +73,10 @@ gridSizeLarge.textContent = "64 x 64"
 buttonsMiddleText.textContent = "Choose grid size"
 
 buttonsLeft.appendChild(colorBlack)
-buttonsLeft.appendChild(colorWhite)
+buttonsLeft.appendChild(colorEraser)
 
-buttonsRight.appendChild(colorRainbow)
-buttonsRight.appendChild(colorErase)
+buttonsRight.appendChild(colorRandom)
+buttonsRight.appendChild(colorGrey)
 
 buttonsMiddle.appendChild(gridSizeSmall)
 buttonsMiddle.appendChild(gridSizeMedium)
@@ -86,9 +93,6 @@ const small = document.querySelector('#small')
 const medium = document.querySelector('#medium')
 const large = document.querySelector('#large')
 
-const emptyDiv = document.createElement('div');
-
-
 const gridBlocks = function(x){
 
     const newGrid = grid.querySelectorAll('div')
@@ -101,9 +105,7 @@ const gridBlocks = function(x){
         let box = document.createElement('div');
         box.classList.add('insideGrid');
         grid.insertAdjacentElement('beforeend', box);
-        box.addEventListener('mouseover', () => {
-            box.style.backgroundColor = 'black'
-        })
+        box.addEventListener('mouseover', (gridColor))
     }
 }
 
@@ -121,7 +123,20 @@ large.addEventListener('click', () => {
     gridBlocks(64);
 })
 
+let frequency = .3;
+for (var i = 0; i < 32; ++i)
+{
+   console.log( Math.sin(frequency * i)  );
+}
 
+function gridColor(){
+    if(color === 'random'){
+        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+    } else {
+        this.style.backgroundColor = color;
+    }
+}
 
-
-
+function changeColor(choice){
+    color = choice;
+}
