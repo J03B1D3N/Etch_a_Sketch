@@ -8,7 +8,6 @@ footer.setAttribute('id', 'footer');
 header.classList.add('section');
 middle.classList.add('section');
 footer.classList.add('section');
-main.appendChild(header)
 main.appendChild(middle)
 main.appendChild(footer)
 
