@@ -101,6 +101,9 @@ const gridBlocks = function(x){
         let box = document.createElement('div');
         box.classList.add('insideGrid');
         grid.insertAdjacentElement('beforeend', box);
+        box.addEventListener('mouseover', () => {
+            box.style.backgroundColor = 'black'
+        })
     }
 }
 
@@ -117,16 +120,6 @@ medium.addEventListener('click', () => {
 large.addEventListener('click', () => {
     gridBlocks(64);
 })
-
-const box = document.getElementsByClassName('insideGrid');
-
-const black = function() {
-    box.addEventListener('mouseover', () => {
-        box.style.backgroundColor = "#000000";
-    })
-}
-
-black;
 
 
 
