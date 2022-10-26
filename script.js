@@ -12,6 +12,8 @@ main.appendChild(header)
 main.appendChild(middle)
 main.appendChild(footer)
 
+footer.textContent = "Copyright @ Justas Lapiene 2022";
+
 const grid = document.createElement('div')
 const gridHeader = document.createElement('div')
 grid.setAttribute('id', 'grid');
@@ -30,6 +32,7 @@ const colorEraser = document.createElement('button')
 const colorGrey = document.createElement('button')
 
 let color = "black";
+let click = true;
 
 colorBlack.setAttribute('onclick', 'changeColor(`black`)');
 colorRandom.setAttribute('onclick', 'changeColor(`random`)');
@@ -109,8 +112,6 @@ const gridBlocks = function(x){
     }
 }
 
-
-
 small.addEventListener('click', () => {
     gridBlocks(16);
 });
@@ -123,20 +124,19 @@ large.addEventListener('click', () => {
     gridBlocks(64);
 })
 
-let frequency = .3;
-for (var i = 0; i < 32; ++i)
-{
-   console.log( Math.sin(frequency * i)  );
-}
-
 function gridColor(){
-    if(color === 'random'){
-        this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
-    } else {
-        this.style.backgroundColor = color;
+    if(click) {
+        if(color === 'random'){
+            this.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+        } else {
+            this.style.backgroundColor = color;
+        }
     }
 }
 
 function changeColor(choice){
     color = choice;
 }
+document.querySelector('#grid').addEventListener('click', () =>{
+    click = !click;
+})

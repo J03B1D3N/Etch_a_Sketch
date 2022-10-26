@@ -2,6 +2,7 @@ body {
     height: 100vh;
     margin: 0;
     padding: 0;
+    background-color: brown;
 }
 #main {
     height: 100%;
@@ -13,17 +14,25 @@ body {
 }
 #header {
     height: 90px;
-    background-color: aqua;
+    background-color: black;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 #middle {
-    background-color: beige;
+    background-color: brown;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 #footer {
     height: 90px;
-    background-color: blueviolet;
+    background-color: black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #grid {
     height: 625px;
@@ -31,9 +40,10 @@ body {
     border: 1px solid black;
     display: grid;
     padding: 0px;
-    margin: 0px;
-    
-   
+    margin: 0px;  
+    background-color: white;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
 }
 #gridHeader {
     height: 200px;
@@ -44,6 +54,8 @@ body {
     align-items: center;
     justify-content: space-between;  
     border: 1px solid black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 #buttonsLeft {
@@ -78,9 +90,24 @@ body {
 }
 
 .insideGrid {
-    border: solid 1px black;
+    border: 0;
     margin: 0;
     Padding: 0;
 }
 
+div {
+    font-family: 'Courier New', Courier, monospace;
+}
 
+.button {
+    padding: 10px;
+    border-radius: 10px;
+    border: solid white 1px;
+    transition: all 0.15s;
+}
+.button:hover{
+    scale: 1.2;
+}
+.button:active{
+    background-color: grey;
+}
